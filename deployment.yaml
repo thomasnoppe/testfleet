@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: echo-ip-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: echo-ip
+  template:
+    metadata:
+      labels:
+        app: echo-ip
+    spec:
+      containers:
+      - name: echo-ip
+        image: nginxinc/nginx-unprivileged:latest
+        ports:
+        - containerPort: 8080
+        volumeMounts:
+        - name: config-volume
+          mountPath: /etc/nginx/conf.d
+      volumes:
+      - name: config-volume
+        configMap:
+          name: echo-ip-config
