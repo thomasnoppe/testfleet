@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: echo-ip-config
+data:
+  default.conf: |
+    server {
+        listen 8080;
+        location / {
+            return 200 "Your IP is $remote_addr\n";
+        }
+    }
