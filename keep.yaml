@@ -4,7 +4,5 @@ metadata:
   name: keel
   namespace: kube-system
 spec:
-  releaseName: keel
-  chart:
-    repository: https://charts.keel.sh
-    name: keel
+  repo: https://charts.keel.sh
+  chart: keel
