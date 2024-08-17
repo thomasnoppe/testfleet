@@ -1,5 +1,5 @@
-apiVersion: helm.fluxcd.io/v1
-kind: HelmRelease
+apiVersion: helm.cattle.io/v1
+kind: HelmChart
 metadata:
   name: keel
   namespace: kube-system
