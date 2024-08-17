@@ -1,9 +1,9 @@
 apiVersion: v1
-  kind: Service
-  metadata:
+kind: Service
+metadata:
     name: echo-ip-service
     namespace: testworkload
-  spec:
+spec:
     internalTrafficPolicy: Cluster
     ipFamilies:
     - IPv4
