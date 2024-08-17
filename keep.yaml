@@ -6,3 +6,4 @@ metadata:
 spec:
   repo: https://charts.keel.sh
   chart: keel
+  targetNamespace: kube-system
