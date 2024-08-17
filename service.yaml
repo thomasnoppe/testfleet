@@ -19,3 +19,24 @@ spec:
     app: echo-ip
   sessionAffinity: None
   type: ClusterIP
+---
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: Service
+  metadata:
+    name: echo-ip-service
+    namespace: testworkload
+  spec:
+    internalTrafficPolicy: Cluster
+    ipFamilies:
+    - IPv4
+    ipFamilyPolicy: SingleStack
+    ports:
+    - port: 80
+      protocol: TCP
+      targetPort: 8080
+    selector:
+      app: echo-ip
+    sessionAffinity: None
+    type: ClusterIP
