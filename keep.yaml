@@ -1,0 +1,11 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: keel
+  namespace: kube-system
+spec:
+  releaseName: keel
+  chart:
+    repository: https://charts.keel.sh
+    name: keel
+    version: 0.19.1  # Update to the desired version
